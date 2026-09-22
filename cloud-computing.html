@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cloud Computing from Thinksocially — cloud solutions, legacy systems upgrades, data migration, and VoIP, all from one accountable team.">
+  <title>Cloud Computing — Thinksocially</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body class="page-service page-cloud-computing">
+
+<!-- Icon sprite: define once, <use> anywhere -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<defs>
+<symbol id="i-node" viewBox="0 0 24 24"><circle cx="6" cy="7" r="2.6"/><circle cx="18" cy="7" r="2.6"/><circle cx="12" cy="18" r="2.6"/><path d="M8.3 8.3 10.5 15.5M15.7 8.3 13.5 15.5M8.6 7h6.8"/></symbol>
+<symbol id="i-monitor" viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="12" rx="2"/><path d="M9 20.5h6M12 16.5v4"/></symbol>
+<symbol id="i-cloud" viewBox="0 0 24 24"><path d="M7 18.5a4.5 4.5 0 0 1-.6-8.96 5.5 5.5 0 0 1 10.66-1.9A4.5 4.5 0 0 1 17 18.5H7Z"/></symbol>
+<symbol id="i-code" viewBox="0 0 24 24"><path d="m9 8-4.5 4L9 16M15 8l4.5 4L15 16"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3.5 4.5 6v6c0 5 3.2 8 7.5 9.5 4.3-1.5 7.5-4.5 7.5-9.5V6L12 3.5Z"/><path d="m8.6 12.2 2.3 2.3 4.5-4.6"/></symbol>
+<symbol id="i-headset" viewBox="0 0 24 24"><path d="M4 13.5v-2a8 8 0 0 1 16 0v2"/><rect x="3.2" y="13" width="4" height="6" rx="1.6"/><rect x="16.8" y="13" width="4" height="6" rx="1.6"/><path d="M20 19c0 1.8-1.6 2.8-4 2.8"/></symbol>
+<symbol id="i-mail" viewBox="0 0 24 24"><rect x="3.5" y="5.5" width="17" height="13" rx="2.2"/><path d="m4.5 7 7.5 6 7.5-6"/></symbol>
+<symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 3.8 9.4 8l-2 2.2a13 13 0 0 0 6.4 6.4l2.2-2 4.2 2.8-.6 3a2 2 0 0 1-2.2 1.6A17.3 17.3 0 0 1 3.2 6.9 2 2 0 0 1 4.8 4.6l1.8-.8Z"/></symbol>
+<symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21.5s7-6.3 7-12A7 7 0 0 0 5 9.5c0 5.7 7 12 7 12Z"/><circle cx="12" cy="9.5" r="2.4"/></symbol>
+<symbol id="i-server" viewBox="0 0 24 24"><rect x="3.5" y="4" width="17" height="6.5" rx="1.6"/><rect x="3.5" y="13.5" width="17" height="6.5" rx="1.6"/><circle cx="7" cy="7.2" r="1"/><circle cx="7" cy="16.7" r="1"/></symbol>
+<symbol id="i-pulse" viewBox="0 0 24 24"><path d="M3 12h4l2.2-6.5L13 18l2-6h6"/></symbol>
+<symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a4.5 4.5 0 0 1-5.8 5.8L4 17l3 3 4.9-4.9a4.5 4.5 0 0 1 5.8-5.8L14.7 12.2Z"/></symbol>
+<symbol id="i-database" viewBox="0 0 24 24"><ellipse cx="12" cy="5.8" rx="7.5" ry="2.8"/><path d="M4.5 5.8v12.4c0 1.5 3.4 2.8 7.5 2.8s7.5-1.3 7.5-2.8V5.8"/><path d="M4.5 12c0 1.5 3.4 2.8 7.5 2.8s7.5-1.3 7.5-2.8"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+<symbol id="i-chevron-right" viewBox="0 0 24 24"><path d="m9.5 6 6.5 6-6.5 6"/></symbol>
+<symbol id="i-chevron-left" viewBox="0 0 24 24"><path d="m14.5 6-6.5 6 6.5 6"/></symbol>
+<symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M4.5 12h15M14 6l6 6-6 6"/></symbol>
+<symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v3M12 18.5v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2.5 12h3M18.5 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></symbol>
+<symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.2A8.5 8.5 0 1 1 9.8 4a6.8 6.8 0 0 0 10.2 10.2Z"/></symbol>
+<symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="5" y="4.5" width="14" height="17" rx="2"/><rect x="8.5" y="2.5" width="7" height="3.5" rx="1"/><path d="m8.5 13 2.3 2.3L15.5 11"/></symbol>
+<symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.4 2.3 3.7 5.3 3.7 8.5s-1.3 6.2-3.7 8.5c-2.4-2.3-3.7-5.3-3.7-8.5S9.6 5.8 12 3.5Z"/></symbol>
+<symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3.5 20c0-3.3 2.5-5.5 5.5-5.5S14.5 16.7 14.5 20"/><circle cx="17" cy="9" r="2.4"/><path d="M15.5 14.2c2.6.2 4.5 2.1 4.5 5.3"/></symbol>
+<symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6.5h16M4 12h16M4 17.5h16"/></symbol>
+<symbol id="i-close" viewBox="0 0 24 24"><path d="m5.5 5.5 13 13M18.5 5.5l-13 13"/></symbol>
+<symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 3 8.5 4.5L12 12 3.5 7.5Z"/><path d="m3.5 12 8.5 4.5L20.5 12M3.5 16.5 12 21l8.5-4.5"/></symbol>
+<symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/><circle cx="12" cy="15" r="1.4"/></symbol>
+<symbol id="i-quote" viewBox="0 0 24 24"><path d="M7.5 8.5c-2 0-3.5 1.6-3.5 4v3h5v-5h-2c0-1.2.9-2 2.5-2Zm9 0c-2 0-3.5 1.6-3.5 4v3h5v-5h-2c0-1.2.9-2 2.5-2Z"/></symbol>
+<symbol id="i-building" viewBox="0 0 24 24"><rect x="4.5" y="3.5" width="10" height="17" rx="1"/><rect x="16" y="9" width="4.5" height="11.5" rx="1"/><path d="M7.5 7h1M11 7h1M7.5 10.5h1M11 10.5h1M7.5 14h1M11 14h1"/></symbol>
+<symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20.2S4 15.6 4 9.9A4.4 4.4 0 0 1 12 7.4a4.4 4.4 0 0 1 8 2.5c0 5.7-8 10.3-8 10.3Z"/></symbol>
+<symbol id="i-landmark" viewBox="0 0 24 24"><path d="M4 20.5h16M5.5 20.5v-8M9.5 20.5v-8M14.5 20.5v-8M18.5 20.5v-8M3.5 9.5 12 4l8.5 5.5Z"/></symbol>
+<symbol id="i-scale" viewBox="0 0 24 24"><path d="M12 3v18M8 21h8M4 8h6M14 8h6M4 8l-2.5 5.5A2.6 2.6 0 0 0 4 17a2.6 2.6 0 0 0 2.5-3.5L4 8Zm16 0-2.5 5.5A2.6 2.6 0 0 0 20 17a2.6 2.6 0 0 0 2.5-3.5L20 8Z"/></symbol>
+<symbol id="i-dollar" viewBox="0 0 24 24"><path d="M12 2.5v19M16.5 6.7c0-1.5-2-2.7-4.5-2.7s-4.5 1.3-4.5 3.1c0 3.8 9 1.8 9 5.9 0 1.9-2 3.2-4.5 3.2s-4.5-1.2-4.5-2.8"/></symbol>
+<symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 6h9M17 6h3M4 18h3M11 18h9M4 12h13M20 12h0"/><circle cx="15" cy="6" r="2"/><circle cx="9" cy="12" r="2"/><circle cx="16" cy="18" r="2"/></symbol>
+<symbol id="i-truck" viewBox="0 0 24 24"><rect x="2.5" y="7" width="12" height="9" rx="1"/><path d="M14.5 10h3.5L20.5 13v3h-6V10Z"/><circle cx="6.5" cy="17.5" r="1.6"/><circle cx="17.5" cy="17.5" r="1.6"/></symbol>
+<symbol id="i-bulb" viewBox="0 0 24 24"><path d="M9 18.5h6M9.5 21h5M12 2.5a6 6 0 0 0-3.4 10.9c.7.5 1.1 1.3 1.1 2.1h4.6c0-.8.4-1.6 1.1-2.1A6 6 0 0 0 12 2.5Z"/></symbol>
+<symbol id="i-bar-chart" viewBox="0 0 24 24"><path d="M4 20.5h16M7 20.5V13M12 20.5V6M17 20.5v-9"/></symbol>
+<symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="3" y="7.5" width="18" height="12" rx="2"/><path d="M8.5 7.5V6a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v1.5M3 12.5h18"/></symbol>
+<symbol id="i-smartphone" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.2"/><path d="M10.5 18.5h3"/></symbol>
+<symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z"/><circle cx="12" cy="12" r="2.6"/></symbol>
+<symbol id="i-radar" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><path d="M12 12 18 6"/><circle cx="12" cy="12" r="1.4"/></symbol>
+<symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="5"/><path d="m8.5 13-2 8 5.5-3 5.5 3-2-8"/></symbol>
+</defs>
+</svg>
+
+
+<!-- ============================================================
+     NAVBAR — shared custom system (same on every page)
+     ============================================================ -->
+<nav class="site-nav" id="siteNav">
+  <div class="container">
+
+    <a class="brand" href="index.html">
+      <img src="img/ts_logo.png" alt="Thinksocially" class="nav-logo">
+    </a>
+
+    <ul class="nav-links" id="navLinks">
+      <li class="has-mega is-open-current">
+        <a href="#services" id="servicesToggle">
+          Services <svg class="icon chev"><use href="#i-chevron-right"/></svg>
+        </a>
+        <div class="mega-panel">
+          <div class="mega-col">
+            <span class="mega-col-title"><svg class="icon"><use href="#i-monitor"/></svg>Managed Services</span>
+            <a class="mega-sub" href="managed-services.html#desktop-support">Desktop Support</a>
+            <a class="mega-sub" href="managed-services.html#server-support">Server Support</a>
+            <a class="mega-sub" href="managed-services.html#network-support">Network Support</a>
+            <a class="mega-sub" href="managed-services.html#monitoring">Monitoring</a>
+            <a class="mega-sub" href="managed-services.html#preventive-maintenance">Preventive Maintenance</a>
+            <a class="mega-sub" href="managed-services.html#backup-recovery">Backup &amp; Recovery</a>
+            <a class="mega-sub" href="managed-services.html#it-sla-mgmt">SLA Management</a>
+            <a class="mega-sub" href="managed-services.html#help-desk">Help Desk</a>
+          </div>
+          <div class="mega-col is-current">
+            <span class="mega-col-title"><svg class="icon"><use href="#i-cloud"/></svg>Cloud Computing</span>
+            <a class="mega-sub" href="cloud-computing.html#cloud-solutions">Cloud Solutions</a>
+            <a class="mega-sub" href="cloud-computing.html#legacy-upgrades">Legacy Systems Upgrade</a>
+            <a class="mega-sub" href="cloud-computing.html#data-migration">Data Migration</a>
+            <a class="mega-sub" href="cloud-computing.html#voip">VoIP</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-col-title"><svg class="icon"><use href="#i-code"/></svg>Professional Services</span>
+            <a class="mega-sub" href="professional-services.html#it-strategy">IT Strategy</a>
+            <a class="mega-sub" href="professional-services.html#continuity-planning">Business Continuity Planning</a>
+            <a class="mega-sub" href="professional-services.html#web-development">Web Development</a>
+            <a class="mega-sub" href="professional-services.html#app-development">Application Development</a>
+            <a class="mega-sub" href="professional-services.html#mobile-development">Mobile App Development</a>
+          </div>
+          <div class="mega-col">
+            <span class="mega-col-title"><svg class="icon"><use href="#i-shield"/></svg>Compliance &amp; Cybersecurity</span>
+            <a class="mega-sub" href="cybersecurity.html#risk-assessment">Risk Assessment</a>
+            <a class="mega-sub" href="cybersecurity.html#compliance">Governance &amp; Compliance</a>
+            <a class="mega-sub" href="cybersecurity.html#threat-detection">Threat Monitoring</a>
+          </div>
+        </div>
+      </li>
+      <li><a href="about.html">About Us</a></li>
+      <li class="nav-cta"><a href="contact.html" class="btn btn-outline"><svg class="icon"><use href="#i-mail"/></svg>Contact Us</a></li>
+      <li class="nav-cta"><a href="support.html" class="btn btn-solid"><svg class="icon"><use href="#i-headset"/></svg>Support Desk</a></li>
+    </ul>
+
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" aria-label="Switch between light and dark theme">
+        <svg class="icon i-sun"><use href="#i-sun"/></svg>
+        <svg class="icon i-moon"><use href="#i-moon"/></svg>
+      </button>
+      <button class="nav-burger" id="navBurger" aria-label="Toggle navigation" aria-expanded="false">
+        <svg class="icon" id="burgerIcon"><use href="#i-menu"/></svg>
+      </button>
+    </div>
+
+  </div>
+</nav>
+
+
+
+<!-- ============================================================
+     1. PAGE HERO
+     ============================================================ -->
+<header class="hero hero-service" id="top">
+  <div class="twinkle" aria-hidden="true"><span class="tw-1"></span><span class="tw-2"></span><span class="tw-3"></span></div>
+
+  <div class="container">
+    <div class="hero-copy">
+      <span class="hero-eyebrow"><span class="dot"></span>Cloud Computing</span>
+      <h1 class="hero-title">Cloud Computing <span class="hero-byline">by Thinksocially</span></h1>
+      <p class="hero-sub">Design, management, and implementation for your systems in the cloud — from first migration to ongoing optimization.</p>
+      <div class="hero-actions">
+        <a class="btn-hero" href="#services">
+          Explore services
+          <svg class="icon"><use href="#i-arrow-right"/></svg>
+        </a>
+      </div>
+      <div class="hero-trustline">
+        <svg class="icon"><use href="#i-shield"/></svg>
+        Trusted since 2003 — DC metro's compliance-based IT partner
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-media">
+    <img src="img/ts_cloud.png" alt="Thinksocially cloud infrastructure dashboard" loading="eager"
+         onerror="this.style.display='none'">
+    <div class="hero-media-scrim"></div>
+    <div class="hero-chip hero-chip-a">
+      <svg class="icon"><use href="#i-cloud"/></svg>
+      <span><strong>4</strong>Cloud Disciplines</span>
+    </div>
+    <div class="hero-chip hero-chip-b">
+      <svg class="icon"><use href="#i-pulse"/></svg>
+      <span><strong>24/7</strong>Uptime Monitoring</span>
+    </div>
+  </div>
+</header>
+
+
+<!-- ============================================================
+     2. SERVICE INDEX
+     ============================================================ -->
+<section class="section section-service-index" id="services">
+  <div class="twinkle" aria-hidden="true"><span class="tw-1"></span><span class="tw-2"></span><span class="tw-3"></span></div>
+  <div class="container">
+
+    <div class="section-head centered">
+      <span class="section-kicker"><svg class="icon"><use href="#i-cloud"/></svg>What's Included</span>
+      <h2 class="section-title">Four disciplines, one seamless cloud strategy</h2>
+      <p class="section-sub">Every Cloud Computing engagement covers the full stack below — pick a card to jump straight to the details.</p>
+    </div>
+
+    <div class="row index-grid g-4">
+
+      <div class="col-lg-3 col-md-6 index-col">
+        <article class="index-card">
+          <div class="index-card-media">
+            <img src="img/ts_cloud_solutions.jpg" alt="Cloud Solutions">
+            <span class="index-card-badge"><svg class="icon"><use href="#i-cloud"/></svg></span>
+          </div>
+          <div class="index-card-body">
+            <h3 class="index-title">Cloud Solutions</h3>
+            <span class="index-rule"></span>
+            <p class="index-desc">Thinksocially helps you navigate the cloud platforms available for a small or mid-sized business.</p>
+            <a class="index-link" href="#cloud-solutions">Learn More <svg class="icon"><use href="#i-arrow-right"/></svg></a>
+          </div>
+        </article>
+      </div>
+
+      <div class="col-lg-3 col-md-6 index-col">
+        <article class="index-card">
+          <div class="index-card-media">
+            <img src="img/ts_legacy_upgrade.jpeg" alt="Legacy Systems Upgrade">
+            <span class="index-card-badge"><svg class="icon"><use href="#i-layers"/></svg></span>
+          </div>
+          <div class="index-card-body">
+            <h3 class="index-title">Legacy Systems Upgrade</h3>
+            <span class="index-rule"></span>
+            <p class="index-desc">Thinksocially supports seamless transitions off outdated legacy systems onto current ones.</p>
+            <a class="index-link" href="#legacy-upgrades">Learn More <svg class="icon"><use href="#i-arrow-right"/></svg></a>
+          </div>
+        </article>
+      </div>
+
+      <div class="col-lg-3 col-md-6 index-col">
+        <article class="index-card">
+          <div class="index-card-media">
+            <img src="img/ts_data_migration.jpeg" alt="Data Migration">
+            <span class="index-card-badge"><svg class="icon"><use href="#i-server"/></svg></span>
+          </div>
+          <div class="index-card-body">
+            <h3 class="index-title">Data Migration</h3>
+            <span class="index-rule"></span>
+            <p class="index-desc">Thinksocially moves your data across systems, with cleansing and deduplication built in.</p>
+            <a class="index-link" href="#data-migration">Learn More <svg class="icon"><use href="#i-arrow-right"/></svg></a>
+          </div>
+        </article>
+      </div>
+
+      <div class="col-lg-3 col-md-6 index-col">
+        <article class="index-card">
+          <div class="index-card-media">
+            <img src="img/ts_voip.jpeg" alt="VoIP">
+            <span class="index-card-badge"><svg class="icon"><use href="#i-phone"/></svg></span>
+          </div>
+          <div class="index-card-body">
+            <h3 class="index-title">VoIP</h3>
+            <span class="index-rule"></span>
+            <p class="index-desc">Thinksocially builds unified VoIP solutions for any organization's telecommunications needs.</p>
+            <a class="index-link" href="#voip">Learn More <svg class="icon"><use href="#i-arrow-right"/></svg></a>
+          </div>
+        </article>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     3. DETAIL SECTIONS
+     ============================================================ -->
+
+<section class="section detail" id="cloud-solutions">
+  <div class="twinkle" aria-hidden="true"><span class="tw-1"></span><span class="tw-2"></span><span class="tw-3"></span></div>
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6 detail-copy">
+        <span class="detail-kicker"><svg class="icon"><use href="#i-cloud"/></svg>01 — Cloud Solutions</span>
+        <h2 class="detail-title">Cloud Solutions</h2>
+        <p>Thinksocially helps you navigate the extensive cloud-based information technology choices that
+          small and medium-sized businesses now have available to them. Proper utilization of cloud technology
+          allows a business to focus on its core mission by providing a secure, expertly-managed data
+          environment without the costs and worries of owning your own hardware and software.</p>
+        <p>Storing and accessing data and applications over the Internet instead of your computer's hard
+          drive can offer considerable advantages for certain use cases, and we will help you choose among the
+          many forms of cloud computing, including solutions based inside your company, outside your company,
+          or a combination of both. We assess the options and provide a strategy with specific recommendations
+          as to which approach will provide you with the optimal balance of features, manageability, cost, and
+          accessibility. We then guide you through the deployment process and provide continuous operational
+          assistance and support.</p>
+        <p>Thinksocially has experience with a wide variety of cloud scenarios and can assist clients in
+          developing, implementing and managing a customized cloud solution. Our cloud solutions can incorporate:</p>
+        <ul class="detail-list">
+          <li><svg class="icon"><use href="#i-check"/></svg>Microsoft Office 365</li>
+          <li><svg class="icon"><use href="#i-check"/></svg>Microsoft Hosted SharePoint</li>
+          <li><svg class="icon"><use href="#i-check"/></svg>Microsoft Hosted Exchange Email</li>
+          <li><svg class="icon"><use href="#i-check"/></svg>Cloud Backups</li>
+          <li><svg class="icon"><use href="#i-check"/></svg>Private Cloud</li>
+          <li><svg class="icon"><use href="#i-check"/></svg>Hybrid Cloud</li>
+          <li><svg class="icon"><use href="#i-check"/></svg>Virtual Desktop Interface (VDI)</li>
+        </ul>
+      </div>
+      <div class="col-lg-6 detail-media">
+        <div class="blob-frame">
+          <img src="img/ts_cloud_solutions.jpg" alt="Cloud solutions" class="img-fluid">
+        </div>
+        <div class="stat-chip stat-chip-bl">
+          <svg class="icon"><use href="#i-cloud"/></svg>
+          <span><strong>99.9%</strong>Platform uptime</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt detail detail-reverse" id="legacy-upgrades">
+  <div class="twinkle" aria-hidden="true"><span class="tw-1"></span><span class="tw-2"></span><span class="tw-3"></span></div>
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6 detail-copy">
+        <span class="detail-kicker"><svg class="icon"><use href="#i-layers"/></svg>02 — Legacy Systems Upgrade</span>
+        <h2 class="detail-title">Legacy Systems Upgrade</h2>
+        <p>Thinksocially facilitates the transition into new solutions and out of outdated legacy applications
+          and systems that may no longer be supported or no longer meet your business needs.</p>
+        <p>We cooperate with our clients to assess what is needed from new versions of applications and which
+          other options provide the best fit. Thinksocially can help decide the best course of action, and
+          then help you move your assets to the cloud as needed. Examples include:</p>
+        <ul class="detail-list">
+          <li><svg class="icon"><use href="#i-check"/></svg>Replacement strategies for unsupported email platforms like Microsoft Exchange 2003</li>
+          <li><svg class="icon"><use href="#i-check"/></svg>Security updates for personal computer operating systems that are no longer supported, such as Windows XP</li>
+          <li><svg class="icon"><use href="#i-check"/></svg>Transition plans for desktop applications shifting to cloud subscriptions, such as Adobe Creative Suite</li>
+        </ul>
+        <p>Thinksocially keeps abreast of these changes so we can inform you about what is changing, how it
+          affects your business, and how to manage the transition without worry.</p>
+      </div>
+      <div class="col-lg-6 detail-media">
+        <div class="blob-frame">
+          <img src="img/ts_legacy_upgrade.jpeg" alt="Legacy systems upgrade" class="img-fluid">
+        </div>
+        <div class="stat-chip stat-chip-br">
+          <svg class="icon"><use href="#i-layers"/></svg>
+          <span><strong>Zero</strong>Unplanned downtime</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section detail" id="data-migration">
+  <div class="twinkle" aria-hidden="true"><span class="tw-1"></span><span class="tw-2"></span><span class="tw-3"></span></div>
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6 detail-copy">
+        <span class="detail-kicker"><svg class="icon"><use href="#i-server"/></svg>03 — Data Migration</span>
+        <h2 class="detail-title">Data Migration</h2>
+        <p>Thinksocially supports our clients through the process of moving critical business information
+          and data from old or legacy systems to new business applications that offer enhanced capabilities, a
+          more customized workflow, and better security.</p>
+        <p>We work with you to create a structured approach for moving the information and data from any
+          legacy system to your target system. Whether we are dealing with an existing application programming
+          interface (API) or have to come up with a customized solution for moving the data, we will walk you
+          through the process.</p>
+        <p>Our process examines your business needs and target system capabilities, as well as the
+          configuration of your current system and the data you have been storing. We then design the data
+          migration process, and guide you through a data cleansing and deduplication strategy that ensures
+          you are only moving the data you need, while maintaining its integrity. We also guide you through
+          extracting the data from the old system, loading it into the new one, and normalizing and verifying
+          it in the target system, so you can be confident you have what you need in accessible form.</p>
+      </div>
+      <div class="col-lg-6 detail-media">
+        <div class="blob-frame">
+          <img src="img/ts_data_migration.jpeg" alt="Data migration" class="img-fluid">
+        </div>
+        <div class="status-card">
+          <div class="status-row"><span class="status-dot"></span><strong>Migration Verified</strong></div>
+          <p>Every record checksummed and reconciled before sign-off.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt detail detail-reverse" id="voip">
+  <div class="twinkle" aria-hidden="true"><span class="tw-1"></span><span class="tw-2"></span><span class="tw-3"></span></div>
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6 detail-copy">
+        <span class="detail-kicker"><svg class="icon"><use href="#i-phone"/></svg>04 — VoIP</span>
+        <h2 class="detail-title">VoIP</h2>
+        <p>Thinksocially helps companies update their phone systems to take advantage of the higher quality,
+          greater flexibility, and lower cost of today's Voice over Internet Protocol (VoIP) services. While
+          older PBX systems are still available, we are eager to have our clients make the most of their
+          telephony options, and maximize their phone system's potential.</p>
+        <p>We help clients access the advantages VoIP offers over older analog systems, including features
+          like call blasting and simultaneous ringing. IP phones can be programmed to ring on a client's cell
+          phone when an external call is received, but be routed to voicemail for other calls. A hosted VoIP
+          system also allows office handsets to be plugged in offsite, at a user's home, allowing more
+          flexibility for telecommuting and remote work. Other useful features include voicemail transcription
+          delivered by email or text message, and making or receiving calls without a phone handset via a PC
+          "softphone" application.</p>
+        <p>Thinksocially will guide you in modernizing your organization's phone system into one unified
+          communications solution, work with telephony providers to manage the technical installation, and
+          provide the operational support to keep the transition painless.</p>
+      </div>
+      <div class="col-lg-6 detail-media">
+        <div class="blob-frame">
+          <img src="img/ts_voip.jpeg" alt="VoIP" class="img-fluid">
+        </div>
+        <div class="stat-chip stat-chip-bl">
+          <svg class="icon"><use href="#i-phone"/></svg>
+          <span><strong>Anywhere</strong>Same number, any device</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="site-footer">
+  <div class="footer-accent"></div>
+  <div class="container">
+
+    <div class="footer-top">
+      <a class="brand" href="index.html">
+        <span class="brand-mark footer-brand-mark">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M12 2 3 7v10l9 5 9-5V7l-9-5Z"/><path d="M3 7l9 5 9-5"/><path d="M12 12v10"/></svg>
+        </span>
+        <span class="brand-word footer-brand-word">Think<span class="footer-brand-dot">socially</span></span>
+      </a>
+      <p class="footer-tagline">Compliance-based IT Managed Services for small and medium-sized businesses and government contractors in the Washington, DC area.</p>
+    </div>
+
+    <div class="row footer-grid footer-grid-4">
+      <div class="col-lg-3 col-md-6 footer-col">
+        <h4 class="footer-heading">Company</h4>
+        <ul class="footer-list">
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="about.html#the-team">Our Team</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-md-6 footer-col">
+        <h4 class="footer-heading">Services</h4>
+        <ul class="footer-list">
+          <li><a href="managed-services.html">Managed Services</a></li>
+          <li><a href="cloud-computing.html">Cloud Computing</a></li>
+          <li><a href="professional-services.html">Professional Services</a></li>
+          <li><a href="cybersecurity.html">Compliance &amp; Cybersecurity</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-md-6 footer-col">
+        <h4 class="footer-heading">Support</h4>
+        <ul class="footer-list">
+          <li><a href="support.html">Support Desk</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-md-6 footer-col">
+        <h4 class="footer-heading">Location</h4>
+        <address class="footer-address">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          3343 14th Street NW,<br>
+          Washington, DC 20010
+        </address>
+        <ul class="footer-social">
+          <li><a href="https://www.linkedin.com/company/thinksocially-llc/about/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7 10v7M7 7v.01M12 17v-4.5a2.5 2.5 0 0 1 5 0V17"/></svg>
+          </a></li>
+          <li><a href="https://twitter.com/ThinksociallyDC" target="_blank" rel="noopener" aria-label="Twitter">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M22 5.9c-.7.3-1.4.5-2.2.6.8-.5 1.4-1.2 1.6-2.1-.7.4-1.6.8-2.4.9a3.8 3.8 0 0 0-6.5 3.5A10.8 10.8 0 0 1 4.6 4.7a3.8 3.8 0 0 0 1.2 5.1c-.6 0-1.2-.2-1.7-.5v.1c0 1.9 1.3 3.4 3 3.8a3.9 3.9 0 0 1-1.7.1 3.8 3.8 0 0 0 3.5 2.6A7.6 7.6 0 0 1 3 17.5a10.7 10.7 0 0 0 5.8 1.7c7 0 10.8-5.8 10.8-10.8v-.5c.7-.5 1.3-1.2 1.8-2Z"/></svg>
+          </a></li>
+          <li><a href="https://www.facebook.com/ThinksociallyDC" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M15 8h2V5h-2a3.5 3.5 0 0 0-3.5 3.5V11H9v3h2.5v6h3v-6H17l.5-3h-3V9c0-.6.4-1 1-1Z"/></svg>
+          </a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Thinksocially. <a href="privacy-policy.html">Terms &amp; Privacy</a></p>
+      <div class="footer-bottom-right">
+        <a class="footer-to-top" href="#top" aria-label="Back to top">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<script src="js/main.js"></script>
+</body>
+</html>
