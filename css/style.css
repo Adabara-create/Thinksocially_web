@@ -1111,6 +1111,17 @@ textarea.form-control{resize:vertical;min-height:130px}
 .btn-submit:hover{background:var(--signal);color:var(--signal-ink);transform:translateY(-2px);box-shadow:0 14px 30px -10px color-mix(in srgb,var(--signal) 55%,transparent)}
 .btn-submit:active{transform:translateY(0) scale(.98)}
 
+/* Honeypot field: invisible to real visitors, still present for simple
+   spam bots to fill in — the backend silently drops any submission where
+   this field comes back non-empty. */
+.form-honeypot{
+  position:absolute;left:-9999px;width:1px;height:1px;opacity:0;pointer-events:none;
+}
+
+/* Submit button loading state, toggled by js/main.js while the request
+   to /api/contact is in flight. */
+.btn-submit.is-loading{opacity:.7;cursor:not-allowed}
+
 .section-map{padding-block:0 0}
 .map-frame{position:relative;width:100%;aspect-ratio:16/5;background:var(--surface-alt);overflow:hidden}
 .map-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
@@ -1196,25 +1207,3 @@ html,body{max-width:100%}
 img,svg,video,iframe{max-width:100%;height:auto}
 .hero-media img{height:100%} /* the rule above would otherwise fight the hero banner's fixed height */
 table{display:block;max-width:100%;overflow-x:auto}
-
-/* Add this to css/style.css — supports the Formspree-wired contact form */
-
-/* Honeypot field: invisible to real visitors, still present for bots to fill in */
-.form-honeypot {
-  position: absolute;
-  left: -9999px;
-  width: 1px;
-  height: 1px;
-  opacity: 0;
-  pointer-events: none;
-}
-
-/* Submit button loading state */
-.btn-submit.is-loading {
-  opacity: 0.7;
-  cursor: not-allowed;
-}
-
-/* Status message colors (in case not already defined) */
-.form-status.is-success { color: #1a8a4a; }
-.form-status.is-error   { color: #d33f3f; }
