@@ -634,7 +634,13 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:600;letter-spacing:-.01e
   .mega-panel{position:static;transform:none;width:100%;box-shadow:none;border:0;grid-template-columns:1fr;opacity:1;visibility:visible;pointer-events:auto;display:none;padding:6px 0 6px 14px;background:transparent}
   .has-mega.is-open .mega-panel{display:grid}
   .nav-burger{display:flex}
-  .nav-cta{display:none}
+
+  /* Contact Us / Support Desk used to just vanish below this width. They now
+     stay in the slide-out drawer as full-width stacked buttons. */
+  .nav-links li.nav-cta{
+    display:block; width:100%; margin:14px 0 0 !important; padding:0 !important; border:0 !important;
+  }
+  .nav-links li.nav-cta > a.btn{ width:100%; }
 }
 
 /* ==========================================================================
@@ -1053,7 +1059,7 @@ body{font-optical-sizing:auto;text-rendering:optimizeLegibility;-moz-osx-font-sm
    introduces the item; the label just gets extra weight and its own color.
    ========================================================================== */
 .detail-list-defs li{align-items:flex-start}
-.detail-list-defs li strong{color:var(--ink);font-weight:700;white-space:nowrap}
+.detail-list-defs li strong{color:var(--ink);font-weight:700}
 
 /* ==========================================================================
    26. CONTACT PAGE
@@ -1117,3 +1123,98 @@ textarea.form-control{resize:vertical;min-height:130px}
   .contact-item{grid-template-columns:1fr}
   .map-frame{aspect-ratio:4/3}
 }
+
+/* ==========================================================================
+   27. RESPONSIVE POLISH  (site-wide, phone / tablet / laptop)
+   Everything above already responds to width in some way; this section
+   closes the remaining gaps so every page — including the tabbed "Our
+   Services" block on index.html — stays clean at any size, and adds a
+   small-viewport pass so nothing feels like a squeezed-down desktop layout.
+   ========================================================================== */
+
+/* -- global: tighten side padding and vertical rhythm on phones -- */
+@media (max-width:480px){
+  .container{padding-inline:16px}
+  .section{padding-block:56px}
+  .hero{padding-top:calc(var(--nav-h) + 40px);padding-bottom:56px}
+  .hero-about{padding-bottom:40px}
+}
+
+/* -- tab-chooser ("Our Services" on index.html): a clean horizontal scroller
+      on narrow screens instead of five buttons wrapping onto two ragged
+      rows. Scroll-snap keeps a whole button centred as you swipe. -- */
+@media (max-width:760px){
+  .tab-chooser{
+    flex-wrap:nowrap; justify-content:flex-start; width:100%;
+    overflow-x:auto; scroll-snap-type:x proximity; -webkit-overflow-scrolling:touch;
+    scrollbar-width:none; -ms-overflow-style:none;
+    margin:0 -16px 40px; padding:6px 16px; border-radius:0; border-left:0; border-right:0;
+    background:transparent;
+  }
+  .tab-chooser::-webkit-scrollbar{display:none}
+  .tab-btn{
+    flex:0 0 auto; scroll-snap-align:start;
+    background:var(--surface-alt); border:1px solid var(--line);
+  }
+  .tab-btn[aria-selected="true"]{border-color:var(--panel-brand)}
+}
+@media (max-width:420px){
+  .tab-btn{padding:10px 14px; font-size:.83rem}
+  .tab-btn .icon{width:14px;height:14px}
+}
+
+/* -- focus carousel and testimonial arrows: comfortable tap targets, and
+      keep the first/last card from hiding flush against the edge -- */
+@media (max-width:480px){
+  .focus-track{padding:30px 5vw 16px}
+  .testi-card{padding:32px 24px}
+}
+
+/* -- service index cards: on a single phone-width column, a 3:4 photo can
+      run tall; ease the ratio so the card doesn't dominate the screen -- */
+@media (max-width:575px){
+  .index-card-media{aspect-ratio:16/11}
+  .page-managed-services .index-card-media{aspect-ratio:16/11}
+}
+
+/* -- trust band and why-visual: reclaim padding once they've dropped to a
+      single column -- */
+@media (max-width:575px){
+  .trust-band{padding:32px 22px; border-radius:var(--radius-m)}
+  .why-visual-caption{left:14px;right:14px;bottom:14px;padding:12px 14px}
+}
+
+/* -- mega-panel columns stay one-per-row on mobile (existing rule below
+      920px), but give the links themselves larger tap targets -- */
+@media (max-width:920px){
+  .mega-col a.mega-sub{padding:10px 10px}
+  .mega-col-title{padding-top:14px}
+}
+
+/* -- nothing on the page should ever force horizontal scroll -- */
+html,body{max-width:100%}
+img,svg,video,iframe{max-width:100%;height:auto}
+.hero-media img{height:100%} /* the rule above would otherwise fight the hero banner's fixed height */
+table{display:block;max-width:100%;overflow-x:auto}
+
+/* Add this to css/style.css — supports the Formspree-wired contact form */
+
+/* Honeypot field: invisible to real visitors, still present for bots to fill in */
+.form-honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Submit button loading state */
+.btn-submit.is-loading {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Status message colors (in case not already defined) */
+.form-status.is-success { color: #1a8a4a; }
+.form-status.is-error   { color: #d33f3f; }

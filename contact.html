@@ -2,19 +2,25 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <script>
+    (function(){
+      try{
+        var t = localStorage.getItem('ts-theme');
+        if(!t){ t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }
+        document.documentElement.setAttribute('data-theme', t);
+      }catch(e){}
+    })();
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Our mission, philosophy, approach and the team behind Thinksocially.">
-  <title>Thinksocially — About Us</title>
+  <meta name="description" content="Call or email Thinksocially. We answer all inquiries within 24 hours on business days.">
+  <title>Contact Us — Thinksocially</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
-  <style>
-  /*FOOTER_STYLE*/
-  </style>
 </head>
-<body class="page-about">
+<body class="page-contact">
 
 <!-- Icon sprite: define once, <use> anywhere -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -114,8 +120,8 @@
           </div>
         </div>
       </li>
-      <li><a href="about.html" class="active" aria-current="page">About Us</a></li>
-      <li class="nav-cta"><a href="contact.html" class="btn btn-outline"><svg class="icon"><use href="#i-mail"/></svg>Contact Us</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li class="nav-cta"><a href="contact.html" class="btn btn-outline" class="active" aria-current="page"><svg class="icon"><use href="#i-mail"/></svg>Contact Us</a></li>
       <li class="nav-cta"><a href="support.html" class="btn btn-solid"><svg class="icon"><use href="#i-headset"/></svg>Support Desk</a></li>
     </ul>
 
@@ -135,32 +141,16 @@
 
 
 <!-- ============================================================
-     1. ABOUT HERO — unique treatment: stat chips instead of the
-        side-banner image used on the service pages
+     1. PAGE HERO
      ============================================================ -->
-<header class="hero hero-page hero-about" id="top">
-  <div class="twinkle"><span class="tw-1"></span><span class="tw-2"></span><span class="tw-3"></span></div>
+<header class="hero hero-page" id="top">
+  <div class="twinkle" aria-hidden="true"><span class="tw-1"></span><span class="tw-2"></span><span class="tw-3"></span></div>
   <div class="container hero-inner">
     <div class="row">
-      <div class="col-lg-10 hero-copy">
-        <span class="hero-eyebrow"><span class="dot"></span> Est. 2004 · Washington, DC</span>
-        <h1 class="hero-title">People-first IT, built on honesty<span class="hero-byline">Our mission, philosophy, and the team behind Thinksocially</span></h1>
-        <p class="hero-sub">We give small and medium-sized businesses — and the government contractors among them — the same enterprise-grade IT capabilities as the Fortune 500, delivered by a team that treats your organization like our own.</p>
-
-        <div class="hero-about-stats">
-          <div class="hero-chip">
-            <svg class="icon" viewBox="0 0 24 24"><path d="M12 2 3 6v6c0 5 3.8 8.7 9 10 5.2-1.3 9-5 9-10V6l-9-4Z"/><path d="m9 12 2 2 4-4"/></svg>
-            <div><strong>20+ years</strong><span>Serving DC-area contractors</span></div>
-          </div>
-          <div class="hero-chip">
-            <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg>
-            <div><strong>20–30%</strong><span>Average drop in IT spend</span></div>
-          </div>
-          <div class="hero-chip">
-            <svg class="icon" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-            <div><strong>Service-first</strong><span>Culture, since day one</span></div>
-          </div>
-        </div>
+      <div class="col-lg-8 hero-copy">
+        <span class="hero-eyebrow"><span class="dot"></span>Get in touch</span>
+        <h1 class="hero-title">Contact Us</h1>
+        <p class="hero-sub">Give us a call or send us an email anytime. We answer all inquiries within 24 hours on business days.</p>
       </div>
     </div>
   </div>
@@ -168,241 +158,94 @@
 
 
 <!-- ============================================================
-     2. MISSION STATEMENT — copy, then the photo directly beneath it
+     2. CONTACT — details on the left, form on the right
      ============================================================ -->
-<section class="section detail" id="mission">
+<section class="section section-contact" id="contact">
   <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-9">
-        <div class="mission-copy">
-          <span class="detail-kicker">
-            <svg class="icon" viewBox="0 0 24 24"><path d="M12 21s-7-4.35-9.5-8.5C.8 8.6 2.7 5 6.2 5c2 0 3.4 1 4.8 2.6C12.4 6 13.8 5 15.8 5c3.5 0 5.4 3.6 3.7 7.5C17 16.65 12 21 12 21Z"/></svg>
-            Our Mission
-          </span>
-          <h2 class="detail-title">Enterprise-grade IT, built for the businesses enterprise budgets leave behind</h2>
-          <div class="detail-copy">
-            <p>Thinksocially is a progressive Information Technology (IT) service company that strives to provide
-              small and medium-sized businesses and non-profit organizations with the same level of IT
-              capabilities and services as large enterprises. We seek to offer government contractors a unique
-              level of expertise, maintenance, and service for their computer systems, so that they can reliably
-              operate within government compliance regimens.</p>
-            <p>Thinksocially was formed on a foundation of honesty, conscientious customer focus, and
-              high-quality service. We are dedicated to supporting both individuals and organizations in accessing
-              the power of technology to improve their bottom lines as well as the quality of their personal and
-              professional lives.</p>
-          </div>
-        </div>
+    <div class="row align-items-start g-5">
 
-        <div class="mission-media">
-          <div class="frame">
-            <img src="img/ts_office1.jpg" alt="Inside the Thinksocially office in Washington, DC" class="img-fluid">
-          </div>
+      <!-- Details -->
+      <div class="col-lg-5 contact-details">
+        <p class="contact-hours">We are open from 9 am EST to 5 pm EST on weekdays</p>
+
+        <ul class="contact-list">
+          <li class="contact-item">
+            <span class="contact-label">Email</span>
+            <a class="contact-value" href="mailto:contact@thinksocially.com">contact@thinksocially.com</a>
+          </li>
+          <li class="contact-item">
+            <span class="contact-label">Phone</span>
+            <a class="contact-value" href="tel:+12024654627">202.465.4627</a>
+          </li>
+          <li class="contact-item">
+            <span class="contact-label">Office</span>
+            <address class="contact-value">
+              3343 14th Street NW,<br>
+              Washington, DC 20010
+            </address>
+          </li>
+        </ul>
+
+        <div class="contact-art">
+          <img src="img/ts_contact.png" alt="Thinksocially team ready to help" class="img-fluid"
+               onerror="this.parentElement.style.display='none'">
         </div>
       </div>
+
+      <!-- Form -->
+      <div class="col-lg-7 contact-form-wrap">
+        <form class="contact-form" id="contactForm"
+              action="https://formspree.io/f/mnpndepl" method="POST"
+              novalidate>
+
+          <div class="form-field">
+            <label class="form-label" for="name">Your Name</label>
+            <input class="form-control" type="text" id="name" name="name"
+                   autocomplete="name" required>
+          </div>
+
+          <div class="form-field">
+            <label class="form-label" for="email">Email Address</label>
+            <input class="form-control" type="email" id="email" name="email"
+                   autocomplete="email" required>
+          </div>
+
+          <div class="form-field">
+            <label class="form-label" for="message">Message</label>
+            <textarea class="form-control" id="message" name="message" rows="6" required></textarea>
+          </div>
+
+          <!-- Makes the email subject readable in the inbox instead of a generic
+               "New submission" line. Formspree reads this field name specially. -->
+          <input type="hidden" name="_subject" value="New inquiry from Thinksocially website">
+
+          <!-- Honeypot: real visitors never see or fill this (hidden via CSS),
+               but simple spam bots do. Formspree silently drops the submission
+               if it's filled in. -->
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="form-honeypot" aria-hidden="true">
+
+          <!-- Shown by JS on success/failure. Empty until then. -->
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+
+          <button class="btn-submit" type="submit" id="formSubmitBtn">
+            <span class="btn-submit-label">Send inquiry</span>
+          </button>
+        </form>
+      </div>
+
     </div>
   </div>
 </section>
 
 
 <!-- ============================================================
-     3. GUIDING PHILOSOPHY
+     3. MAP  (optional — swap the src for their embed)
      ============================================================ -->
-<section class="section section-alt section-prose" id="philosophy">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-8">
-        <div class="section-head centered">
-          <span class="section-kicker">
-            <svg class="icon" viewBox="0 0 24 24"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5c.6.6 1 1.4 1 2.5h6c0-1.1.4-1.9 1-2.5A6 6 0 0 0 12 3Z"/></svg>
-            Our Guiding Philosophy
-          </span>
-          <h2 class="section-title">A more human approach to technology</h2>
-        </div>
-        <div class="prose" style="max-width:var(--measure);margin-inline:auto;text-align:left">
-          <p style="color:var(--ink-soft);font-size:1.06rem;line-height:1.75">We believe the ability to think socially has always been a bridge between technology and people.
-            The name Thinksocially represents a more evolved approach to business, as well as to the services
-            and solutions we provide. In today's information technology age, there is an increasing need for
-            imagination and for a new people-centric approach to business: an approach that has the honesty and
-            confidence to let go of old hierarchical paradigms and tempers the needs for business growth and
-            profit with the human needs of customers and employees.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ============================================================
-     4. OUR APPROACH
-     ============================================================ -->
-<section class="section section-prose" id="approach">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-8">
-        <div class="section-head centered">
-          <span class="section-kicker">
-            <svg class="icon" viewBox="0 0 24 24"><path d="M12 20V10M18 20V4M6 20v-6"/></svg>
-            Our Approach
-          </span>
-          <h2 class="section-title">Compliance-based service, without the enterprise price tag</h2>
-        </div>
-        <div class="prose" style="max-width:var(--measure);margin-inline:auto;text-align:left">
-          <p style="color:var(--ink-soft);font-size:1.06rem;line-height:1.75;margin-bottom:16px">Since 2004, Thinksocially has provided government contractors with compliance-based IT Managed
-            Services at a cost far lower than most other IT support options. We are a service-first company, and
-            strive to rapidly integrate with your culture and environment to solve the most pressing technology
-            challenges facing your organization. And we take time to understand your organization as a whole
-            (your people, your technology, and your processes) to further customize and enhance our service
-            solution.</p>
-          <p style="color:var(--ink-soft);font-size:1.06rem;line-height:1.75;margin-bottom:16px">We use all of our suggested solutions ourselves, so we know they work and know how to put them to
-            work for you. Technology is always evolving, and so are we, to ensure we consistently deliver
-            measurable value. We never stop improving our people, process, and technology services.</p>
-          <p style="color:var(--ink-soft);font-size:1.06rem;line-height:1.75">Our best practices and maintenance-based approach to managing networks allow us to provide
-            quality, end-to-end IT support with fewer interruptions and reduced impact. We offer the
-            capabilities of a Fortune 500 IT staff, but at prices oriented towards the budgets of small and
-            medium-sized organizations. Our experience allows us to scale our clients' technology
-            infrastructure in a way that allows their people to focus on their business and not the underlying
-            technology.</p>
-        </div>
-        <div class="pill-row" style="justify-content:center;margin-top:28px">
-          <span class="pill-btn">Compliance-first</span>
-          <span class="pill-btn">Service-first culture</span>
-          <span class="pill-btn">Continuous improvement</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ============================================================
-     5. OUR DIFFERENCE — pull quote + margin value cards
-     ============================================================ -->
-<section class="section section-alt section-prose" id="difference">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-9">
-        <div class="section-head centered">
-          <span class="section-kicker">
-            <svg class="icon" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
-            Our Difference
-          </span>
-          <h2 class="section-title">Technology adapted to how your people actually work</h2>
-        </div>
-
-        <div class="prose" style="max-width:var(--measure);margin-inline:auto;text-align:left">
-          <p style="color:var(--ink-soft);font-size:1.06rem;line-height:1.75;margin-bottom:16px">We believe that technology can create a better future for our customers, and that technology
-            should be adapted to the specific work and lifestyle needs of each user. Today, there is a growing
-            variety of devices being used daily, including desktops, laptops, tablets, smartphones, and even
-            wearables. And business owners need to balance maintaining their technology in compliant ways, while
-            also maximizing productivity. That is where Thinksocially comes in and why we are different.</p>
-          <p style="color:var(--ink-soft);font-size:1.06rem;line-height:1.75">We develop, implement, and maintain your technology for your business, but also work to customize
-            the experience for the people in the organization. Instead of just reacting to unplanned IT
-            emergencies, we help you get out ahead of the curve through the proper setup and maintenance of your
-            technology, as well as training and coaching your staff, so we can prevent disruptions that could
-            hurt your productivity instead of just responding to them.</p>
-        </div>
-
-        <blockquote class="pull-quote" style="margin:36px auto 0;max-width:var(--measure);border-left:3px solid var(--signal);padding-left:22px;font-family:var(--font-display);font-size:1.2rem;line-height:1.55;color:var(--ink)">
-          The Thinksocially approach invests in our processes and methods, and in our remote administration
-          tools and monitoring system, to bring down the costs of supporting a wide variety of IT tools.
-        </blockquote>
-
-        <p style="margin-top:40px;font-weight:600;color:var(--ink);text-align:center">The bottom line is that Thinksocially improves your margins by:</p>
-        <div class="value-row">
-          <div class="value-card">
-            <div class="value-card-icon">
-              <svg class="icon" viewBox="0 0 24 24"><path d="M3 17 9 11l4 4 8-8"/><path d="M15 7h6v6"/></svg>
-            </div>
-            <h4>Helping your top line</h4>
-            <p>Reliable, compliant systems keep client-facing work moving, so revenue-generating time isn't lost to IT firefighting.</p>
-          </div>
-          <div class="value-card">
-            <div class="value-card-icon">
-              <svg class="icon" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-            </div>
-            <h4>A more productive team</h4>
-            <p>We make your employees more productive, so they can focus on clients and their work, and generating revenue for the firm.</p>
-          </div>
-          <div class="value-card">
-            <div class="value-card-icon">
-              <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
-            </div>
-            <h4>Lower IT investment</h4>
-            <p>Preventive maintenance and staff training reduce your IT investment requirements by as much as 20–30%.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ============================================================
-     6. THE TEAM — wider, photo-led cards (reuses .index-card)
-     ============================================================ -->
-<section class="section section-team" id="the-team">
-  <div class="container">
-
-    <div class="section-head centered">
-      <span class="section-kicker">
-        <svg class="icon" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        Our Team
-      </span>
-      <h2 class="section-title">The people behind every engagement</h2>
-      <p class="section-sub">A small, senior team — not a call-center rotation. Full bios and photos coming soon.</p>
-    </div>
-
-    <div class="row team-grid">
-
-      <div class="col-lg-4 col-md-6 index-col">
-        <article class="index-card">
-          <div class="index-card-media">
-            <div class="index-card-badge">
-              <svg class="icon" viewBox="0 0 24 24"><path d="M12 2 3 7v10l9 5 9-5V7l-9-5Z"/></svg>
-            </div>
-          </div>
-          <div class="index-card-body">
-            <h3 class="index-title">Full Name</h3>
-            <span class="index-rule"></span>
-            <span class="team-role">Job Title</span>
-            <p class="index-desc" style="margin-top:10px">One or two sentences of bio — pending from the client.</p>
-          </div>
-        </article>
-      </div>
-
-      <div class="col-lg-4 col-md-6 index-col">
-        <article class="index-card">
-          <div class="index-card-media">
-            <div class="index-card-badge">
-              <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M2 20h20"/></svg>
-            </div>
-          </div>
-          <div class="index-card-body">
-            <h3 class="index-title">Full Name</h3>
-            <span class="index-rule"></span>
-            <span class="team-role">Job Title</span>
-            <p class="index-desc" style="margin-top:10px">One or two sentences of bio — pending from the client.</p>
-          </div>
-        </article>
-      </div>
-
-      <div class="col-lg-4 col-md-6 index-col">
-        <article class="index-card">
-          <div class="index-card-media">
-            <div class="index-card-badge">
-              <svg class="icon" viewBox="0 0 24 24"><path d="M12 2 3 6v6c0 5 3.8 8.7 9 10 5.2-1.3 9-5 9-10V6l-9-4Z"/></svg>
-            </div>
-          </div>
-          <div class="index-card-body">
-            <h3 class="index-title">Full Name</h3>
-            <span class="index-rule"></span>
-            <span class="team-role">Job Title</span>
-            <p class="index-desc" style="margin-top:10px">One or two sentences of bio — pending from the client.</p>
-          </div>
-        </article>
-      </div>
-
-    </div>
+<section class="section section-map" id="map">
+  <div class="map-frame">
+    <!-- Replace with the client's Google Maps embed URL for 3343 14th Street NW -->
+    <iframe title="Thinksocially office location" src="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
   </div>
 </section>
 
