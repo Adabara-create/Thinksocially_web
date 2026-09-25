@@ -1,4 +1,3 @@
-javascript
 /* ==========================================================================
    THINKSOCIALLY — SITE SCRIPT
    One file, shared by every page. Every feature below checks that its
@@ -248,7 +247,10 @@ javascript
     }
 
     tabs.forEach(function (t) {
-      t.addEventListener("click", function () {
+      t.setAttribute("type", "button");
+
+      t.addEventListener("click", function (e) {
+        e.preventDefault();
         activate(t.dataset.tab);
       });
     });
@@ -357,6 +359,16 @@ javascript
 
   /* ------------------------------------------------------------------------
      5. "WHY THINKSOCIALLY" ACCORDION
+
+     Height is now driven entirely by CSS (a 0fr / 1fr grid-template-rows
+     transition on .why-item-body — see style.css section 10), so this no
+     longer measures scrollHeight in pixels. That measurement used to run
+     once, right when the script executed, and if the web fonts hadn't
+     finished loading yet the measured height came out too short — the
+     panel would open to a clipped box that never resized itself, cutting
+     off the last line or two of copy. The grid technique sizes itself to
+     whatever the content actually needs at animation time, so it can't
+     go stale like that.
      ------------------------------------------------------------------------ */
 
   (function whyAccordion() {
@@ -369,20 +381,13 @@ javascript
     var items = $$(".why-item", root);
 
     function setOpen(item, open) {
-      var body = item.querySelector(
-        ".why-item-body"
-      );
+      item.classList.toggle("is-open", open);
 
-      item.classList.toggle(
-        "is-open",
-        open
-      );
+      var head = item.querySelector(".why-item-head");
 
-      if (!body) return;
-
-      body.style.maxHeight = open
-        ? body.scrollHeight + "px"
-        : "0px";
+      if (head) {
+        head.setAttribute("aria-expanded", open ? "true" : "false");
+      }
     }
 
     items.forEach(function (item) {
@@ -391,6 +396,8 @@ javascript
       );
 
       if (!head) return;
+
+      head.setAttribute("type", "button");
 
       setOpen(
         item,
@@ -411,24 +418,16 @@ javascript
         }
       );
     });
-
-    window.addEventListener(
-      "resize",
-      function () {
-        items.forEach(function (item) {
-          if (
-            item.classList.contains("is-open")
-          ) {
-            setOpen(item, true);
-          }
-        });
-      }
-    );
   })();
 
 
   /* ------------------------------------------------------------------------
-     6. TESTIMONIALS SLIDER
+     6. TESTIMONIALS
+
+     Both testimonials are laid out side by side (see .testi-track in
+     style.css), so there's nothing left to slide between. This just keeps
+     both cards marked active/visible and quietly does nothing if a page
+     still has the old prev/next/dots markup on it.
      ------------------------------------------------------------------------ */
 
   (function testimonials() {
@@ -439,6 +438,11 @@ javascript
     if (!track) return;
 
     var slides = $$(".testi-slide", track);
+
+    slides.forEach(function (s) {
+      s.classList.add("is-active");
+    });
+
     var dotsWrap = document.getElementById(
       "testiDots"
     );
@@ -447,85 +451,9 @@ javascript
       ? $$(".testi-dot", dotsWrap)
       : [];
 
-    var prevBtn = document.getElementById(
-      "testiPrev"
-    );
-
-    var nextBtn = document.getElementById(
-      "testiNext"
-    );
-
-    var i = Math.max(
-      0,
-      slides.findIndex(function (s) {
-        return s.classList.contains(
-          "is-active"
-        );
-      })
-    );
-
-    function show(index) {
-      i =
-        (index + slides.length) %
-        slides.length;
-
-      slides.forEach(function (s, n) {
-        s.classList.toggle(
-          "is-active",
-          n === i
-        );
-      });
-
-      dots.forEach(function (d, n) {
-        d.classList.toggle(
-          "is-active",
-          n === i
-        );
-      });
-    }
-
-    if (prevBtn) {
-      prevBtn.addEventListener(
-        "click",
-        function () {
-          show(i - 1);
-        }
-      );
-    }
-
-    if (nextBtn) {
-      nextBtn.addEventListener(
-        "click",
-        function () {
-          show(i + 1);
-        }
-      );
-    }
-
-    dots.forEach(function (d, n) {
-      d.addEventListener(
-        "click",
-        function () {
-          show(n);
-        }
-      );
+    dots.forEach(function (d) {
+      d.classList.add("is-active");
     });
-
-    if (slides.length > 1) {
-      var timer = setInterval(
-        function () {
-          show(i + 1);
-        },
-        9000
-      );
-
-      track.addEventListener(
-        "mouseenter",
-        function () {
-          clearInterval(timer);
-        }
-      );
-    }
   })();
 
 
@@ -599,4 +527,3 @@ javascript
   })();
 
 })();
-
